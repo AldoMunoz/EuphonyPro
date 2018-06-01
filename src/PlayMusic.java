@@ -8,7 +8,8 @@ import java.io.InputStream;
 
 public class PlayMusic {
     public static void main(String[] args) {
-
+        playMusic("fortnitetest.wav");
+        System.out.println("Running");
     }
 
     public static void playMusic(String filepath) {
