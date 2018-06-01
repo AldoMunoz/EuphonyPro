@@ -17,11 +17,11 @@ public class PlayMusic {
         try{
             music = new FileInputStream(new File(filepath));
             AudioStream audio = new AudioStream(music);
-            AudioPlayer
+            AudioPlayer.player.start(audio);
         }
         catch (Exception e)
         {
-            JOptionPane.showMessageDialog("Error");
+            JOptionPane.showMessageDialog(null, "Error");
         }
     }
 }
