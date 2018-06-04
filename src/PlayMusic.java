@@ -9,7 +9,7 @@ import java.io.InputStream;
 public class PlayMusic {
     public static void main(String[] args) {
         playMusic("fortnitetest.wav");
-        System.out.println("Running");
+        JOptionPane.showMessageDialog(null, "Playing Fortnite Music");
     }
 
     public static void playMusic(String filepath) {
