@@ -16,21 +16,26 @@ public class Piano_Screen extends JFrame{
         p1.setBorder(border);
 
         JButton c = new JButton("C");
+        c.setBackground(Color.PINK);
         p2.add(c);
         JButton d = new JButton("D");
+        d.setBackground(Color.PINK);
         p2.add(d);
         JButton e = new JButton("E");
+        e.setBackground(Color.PINK);
         p2.add(e);
         JButton f = new JButton("F");
+        f.setBackground(Color.PINK);
         p2.add(f);
         JButton g = new JButton("G");
+        g.setBackground(Color.PINK);
         p2.add(g);
         JButton a = new JButton("A");
+        a.setBackground(Color.PINK);
         p2.add(a);
         JButton b = new JButton("B");
+        b.setBackground(Color.PINK);
         p2.add(b);
-
-
 
         add(p1, BorderLayout.CENTER);
         add(p2, BorderLayout.SOUTH);
