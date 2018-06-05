@@ -1,5 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 //ppop
 public class HomeScreen extends JFrame {
     public HomeScreen(){
@@ -14,7 +17,18 @@ public class HomeScreen extends JFrame {
         JLabel chooseInstrument = new JLabel("Pick your instument");
 
         JButton piano = new JButton("Piano", pianoPicture);
-        JButton guitar = new JButton("Guitar", );
+        piano.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Piano_Screen frame = new Piano_Screen();
+                frame.setSize(1000, 1000);
+                frame.setLocationRelativeTo(null);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setVisible(true);
+            }
+        });
+
+        JButton guitar = new JButton("Guitar");
 
         homeScreen.add(welcomeBanner);
         greetingLabel.add(chooseInstrument);
@@ -31,7 +45,7 @@ public class HomeScreen extends JFrame {
 
     public static void main(String[] args) {
         HomeScreen frame = new HomeScreen();
-        frame.setSize(1000, 1000);
+        frame.setSize(500, 700);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
