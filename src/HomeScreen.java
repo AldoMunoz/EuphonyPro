@@ -9,7 +9,6 @@ public class HomeScreen extends JFrame {
         JPanel homeScreen = new JPanel();
         JPanel greetingLabel = new JPanel();
         JPanel pianoOption = new JPanel();
-        JPanel guitarOption = new JPanel();
         //ImageIcon guitarPicture = new ImageIcon("o.gif");
         ImageIcon pianoPicture = new ImageIcon("CompSciPiano.jpg");
 
@@ -28,18 +27,14 @@ public class HomeScreen extends JFrame {
             }
         });
 
-        JButton guitar = new JButton("Guitar");
 
         homeScreen.add(welcomeBanner);
         greetingLabel.add(chooseInstrument);
         pianoOption.add(piano);
 
-        guitarOption.add(guitar);
-
         add(homeScreen,  BorderLayout.NORTH);
         add(greetingLabel, BorderLayout.CENTER);
         add(pianoOption, BorderLayout.EAST);
-        add(guitarOption, BorderLayout.WEST);
 
     }
 
