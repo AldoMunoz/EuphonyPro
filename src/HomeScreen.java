@@ -14,7 +14,7 @@ public class HomeScreen extends JFrame {
         JLabel chooseInstrument = new JLabel("Pick your instument");
 
         JButton piano = new JButton("Piano", pianoPicture);
-        JButton guitar = new JButton("Guitar", );
+        JButton guitar = new JButton("Guitar");
 
         homeScreen.add(welcomeBanner);
         greetingLabel.add(chooseInstrument);
@@ -31,9 +31,12 @@ public class HomeScreen extends JFrame {
 
     public static void main(String[] args) {
         HomeScreen frame = new HomeScreen();
-        frame.setSize(1000, 1000);
+        Toolkit tk = Toolkit.getDefaultToolkit();
+        int xSize = ((int) tk.getScreenSize().getWidth());
+        int ySize = ((int) tk.getScreenSize().getHeight());
+        frame.setSize(xSize,ySize);
+        frame.setVisible(true);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
     }
 }

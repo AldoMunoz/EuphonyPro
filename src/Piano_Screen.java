@@ -9,19 +9,29 @@ public class Piano_Screen extends JFrame{
 
         JPanel p1 = new JPanel();
         JPanel p2 = new JPanel(new GridLayout(1,7,10,10));
-        JPanel p3 = new JPanel();
+        JPanel p3 = new JPanel(new GridLayout(2,1));
 
         Border border = new LineBorder(Color.BLACK, 1);
 
         ImageIcon playBttn = new ImageIcon("playbutton.png");
-        Image image = playBttn.getImage(); // transform it
-        Image newimg = image.getScaledInstance(90, 90,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+        Image image = playBttn.getImage();
+        Image newimg = image.getScaledInstance(90, 90,  java.awt.Image.SCALE_SMOOTH);
         playBttn = new ImageIcon(newimg);
+
+        ImageIcon stopBttn = new ImageIcon("stopbutton.png");
+        Image image1 = stopBttn.getImage(); // transform it
+        Image newimg1 = image1.getScaledInstance(90, 90,  java.awt.Image.SCALE_SMOOTH);
+        stopBttn = new ImageIcon(newimg1);
 
         JButton play = new JButton(playBttn);
         play.setPreferredSize(new Dimension(100, 100));
         play.setBackground(Color.YELLOW);
         p3.add(play);
+
+        JButton stop = new JButton(stopBttn);
+        stop.setPreferredSize(new Dimension(100,100));
+        stop.setBackground(Color.YELLOW);
+        p3.add(stop);
 
         p2.setBorder(border);
         p1.setBorder(border);
@@ -31,6 +41,7 @@ public class Piano_Screen extends JFrame{
         c.setFont(new Font("Arial", Font.BOLD, 30));
         c.setPreferredSize(new Dimension(40, 100));
         p2.add(c);
+
         JButton d = new JButton("D");
         d.setPreferredSize(new Dimension(40, 60));
         d.setFont(new Font("Arial", Font.BOLD, 30));
@@ -66,6 +77,7 @@ public class Piano_Screen extends JFrame{
         add(p2, BorderLayout.SOUTH);
         add(p3, BorderLayout.EAST);
     }
+
     public static void main(String[] args) {
         Piano_Screen frame = new Piano_Screen();
         Toolkit tk = Toolkit.getDefaultToolkit();
