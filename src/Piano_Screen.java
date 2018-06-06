@@ -1,12 +1,22 @@
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Piano_Screen extends JFrame {
+    List<String> pianoNotes = new ArrayList<String>();
+
     public Piano_Screen() {
         setTitle("Piano Screen!");
 
@@ -30,6 +40,23 @@ public class Piano_Screen extends JFrame {
         JButton play = new JButton(playBttn);
         play.setPreferredSize(new Dimension(100, 100));
         play.setBackground(Color.YELLOW);
+        play.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                for(int i = 0; i < pianoNotes.size(); i++) {
+                    InputStream music;
+                    try{
+                        music = new FileInputStream(new File(pianoNotes[i]));
+                        AudioStream audio = new AudioStream(music);
+                        AudioPlayer.player.start(audio);
+                    }
+                    catch (Exception el)
+                    {
+                        JOptionPane.showMessageDialog(null, "Error");
+                    }
+                }
+            }
+        });
         p3.add(play);
 
         JButton stop = new JButton(stopBttn);
@@ -40,80 +67,7 @@ public class Piano_Screen extends JFrame {
         p2.setBorder(border);
         p1.setBorder(border);
 
-        JButton c = new JButton("C");
-        c.setBackground(Color.RED);
-        c.setFont(new Font("Stencil", Font.BOLD, 30));
-        c.setPreferredSize(new Dimension(40, 100));
-        c.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JLabel cLetter = new JLabel("C");
-                cLetter.setFont(new Font("Stencil", Font.BOLD, 30));
-                p1.add(cLetter);
-                p1.revalidate();
-            }
-        });
-        p2.add(c);
-        JButton d = new JButton("D");
-        d.setPreferredSize(new Dimension(40, 60));
-        d.setFont(new Font("Stencil", Font.BOLD, 30));
-        d.setBackground(Color.RED);
-        d.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JLabel dLetter = new JLabel("D");
-                dLetter.setFont(new Font("Stencil", Font.BOLD, 30));
-                p1.add(dLetter);
-                p1.revalidate();
-            }
-        }); {
-        }
-        p2.add(d);
-        JButton e = new JButton("E");
-        e.setPreferredSize(new Dimension(40, 60));
-        e.setFont(new Font("Stencil", Font.BOLD, 30));
-        e.setBackground(Color.RED);
-        e.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JLabel eLetter = new JLabel("E");
-                eLetter.setFont(new Font("Stencil", Font.BOLD, 30));
-                p1.add(eLetter);
-                p1.revalidate();
-            }
-        }); {
-        }
-        p2.add(e);
-        JButton f = new JButton("F");
-        f.setPreferredSize(new Dimension(40, 60));
-        f.setFont(new Font("Stencil", Font.BOLD, 30));
-        f.setBackground(Color.RED);
-        f.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JLabel fLetter = new JLabel("F");
-                fLetter.setFont(new Font("Stencil", Font.BOLD, 30));
-                p1.add(fLetter);
-                p1.revalidate();
-            }
-        }); {
-        }
-        p2.add(f);
-        JButton g = new JButton("G");
-        g.setPreferredSize(new Dimension(40, 60));
-        g.setFont(new Font("Stencil", Font.BOLD, 30));
-        g.setBackground(Color.RED);
-        g.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JLabel gLetter = new JLabel("G");
-                gLetter.setFont(new Font("Stencil", Font.BOLD, 30));
-                p1.add(gLetter);
-                p1.revalidate();
-            }
-        }); {
-        }
-        p2.add(g);
+
         JButton a = new JButton("A");
         a.setPreferredSize(new Dimension(40, 60));
         a.setFont(new Font("Stencil", Font.BOLD, 30));
@@ -123,6 +77,7 @@ public class Piano_Screen extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 JLabel aLetter = new JLabel("A");
                 aLetter.setFont(new Font("Stencil", Font.BOLD, 30));
+                pianoNotes.add("a.wav");
                 p1.add(aLetter);
                 p1.revalidate();
             }
@@ -138,12 +93,93 @@ public class Piano_Screen extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 JLabel bLetter = new JLabel("B");
                 bLetter.setFont(new Font("Stencil", Font.BOLD, 30));
+                pianoNotes.add("b.wav");
                 p1.add(bLetter);
                 p1.revalidate();
             }
         }); {
         }
         p2.add(b);
+        JButton c = new JButton("C");
+        c.setBackground(Color.RED);
+        c.setFont(new Font("Stencil", Font.BOLD, 30));
+        c.setPreferredSize(new Dimension(40, 100));
+        c.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JLabel cLetter = new JLabel("C");
+                cLetter.setFont(new Font("Stencil", Font.BOLD, 30));
+                pianoNotes.add("c.wav");
+                p1.add(cLetter);
+                p1.revalidate();
+            }
+        });
+        p2.add(c);
+        JButton d = new JButton("D");
+        d.setPreferredSize(new Dimension(40, 60));
+        d.setFont(new Font("Stencil", Font.BOLD, 30));
+        d.setBackground(Color.RED);
+        d.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JLabel dLetter = new JLabel("D");
+                dLetter.setFont(new Font("Stencil", Font.BOLD, 30));
+                pianoNotes.add("d.wav");
+                p1.add(dLetter);
+                p1.revalidate();
+            }
+        }); {
+        }
+        p2.add(d);
+        JButton e = new JButton("E");
+        e.setPreferredSize(new Dimension(40, 60));
+        e.setFont(new Font("Stencil", Font.BOLD, 30));
+        e.setBackground(Color.RED);
+        e.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JLabel eLetter = new JLabel("E");
+                eLetter.setFont(new Font("Stencil", Font.BOLD, 30));
+                pianoNotes.add("e.wav");
+                p1.add(eLetter);
+                p1.revalidate();
+            }
+        }); {
+        }
+        p2.add(e);
+        JButton f = new JButton("F");
+        f.setPreferredSize(new Dimension(40, 60));
+        f.setFont(new Font("Stencil", Font.BOLD, 30));
+        f.setBackground(Color.RED);
+        f.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JLabel fLetter = new JLabel("F");
+                fLetter.setFont(new Font("Stencil", Font.BOLD, 30));
+                pianoNotes.add("f.wav");
+                p1.add(fLetter);
+                p1.revalidate();
+            }
+        }); {
+        }
+        p2.add(f);
+        JButton g = new JButton("G");
+        g.setPreferredSize(new Dimension(40, 60));
+        g.setFont(new Font("Stencil", Font.BOLD, 30));
+        g.setBackground(Color.RED);
+        g.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JLabel gLetter = new JLabel("G");
+                gLetter.setFont(new Font("Stencil", Font.BOLD, 30));
+                pianoNotes.add("g.wav");
+                p1.add(gLetter);
+                p1.revalidate();
+            }
+        }); {
+        }
+        p2.add(g);
+
 
         add(p1, BorderLayout.CENTER);
         add(p2, BorderLayout.SOUTH);
