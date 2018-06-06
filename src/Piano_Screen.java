@@ -11,6 +11,7 @@ public class Piano_Screen extends JFrame {
         setTitle("Piano Screen!");
 
         JPanel p1 = new JPanel();
+        p1.setLayout(new FlowLayout());
         JPanel p2 = new JPanel(new GridLayout(1,7,10,10));
         JPanel p3 = new JPanel(new GridLayout(2,1));
 
