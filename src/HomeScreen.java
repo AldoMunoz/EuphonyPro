@@ -1,5 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 //ppop
 public class HomeScreen extends JFrame {
     public HomeScreen(){
@@ -31,14 +34,40 @@ public class HomeScreen extends JFrame {
         JButton piano = new JButton("Piano", pianoPicture);
         piano.setBackground(Color.WHITE);
         piano.setFont(new Font("Windings 3", Font.PLAIN, 20));
-        JButton guitar = new JButton("Guitar", guitarPicture);
-        guitar.setBackground(Color.WHITE);
-        guitar.setFont(new Font("Windings 3", Font.PLAIN, 20));
+        piano.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Piano_Screen frame = new Piano_Screen();
+                Toolkit tk = Toolkit.getDefaultToolkit();
+                int xSize = ((int) tk.getScreenSize().getWidth());
+                int ySize = ((int) tk.getScreenSize().getHeight());
+                frame.setSize(xSize,ySize);
+                frame.setVisible(true);
+                frame.setLocationRelativeTo(null);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            }
+        });
+        JButton trumpet = new JButton("Guitar", guitarPicture);
+        trumpet.setBackground(Color.WHITE);
+        trumpet.setFont(new Font("Windings 3", Font.PLAIN, 20));
+        trumpet.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Trumpet_Screen frame = new Trumpet_Screen();
+                Toolkit tk = Toolkit.getDefaultToolkit();
+                int xSize = ((int) tk.getScreenSize().getWidth());
+                int ySize = ((int) tk.getScreenSize().getHeight());
+                frame.setSize(xSize,ySize);
+                frame.setVisible(true);
+                frame.setLocationRelativeTo(null);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            }
+        });
         JButton board = new JButton("Sound Board", boardPicture);
         board.setBackground(Color.WHITE);
         board.setFont(new Font("Windings 3", Font.PLAIN, 20));
         buttons.add(piano);
-        buttons.add(guitar);
+        buttons.add(trumpet);
         buttons.add(board);
 
         homeScreen.add(welcomeBanner);
