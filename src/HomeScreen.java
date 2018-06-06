@@ -13,10 +13,10 @@ public class HomeScreen extends JFrame {
         JPanel buttons = new JPanel();
         buttons.setBackground(Color.WHITE);
 
-        ImageIcon guitarPicture = new ImageIcon("CompSciGuitar.jpeg");
-        Image image = guitarPicture.getImage();
+        ImageIcon trumpetPicture = new ImageIcon("CompSciTrumpet.jpg");
+        Image image = trumpetPicture.getImage();
         Image newimg = image.getScaledInstance(500, 500,  java.awt.Image.SCALE_SMOOTH);
-        guitarPicture = new ImageIcon(newimg);
+        trumpetPicture = new ImageIcon(newimg);
         ImageIcon pianoPicture = new ImageIcon("CompSciPiano.jpg");
         Image image1 = pianoPicture.getImage();
         Image newimg1 = image1.getScaledInstance(500, 500,  java.awt.Image.SCALE_SMOOTH);
@@ -47,7 +47,8 @@ public class HomeScreen extends JFrame {
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             }
         });
-        JButton trumpet = new JButton("Guitar", guitarPicture);
+
+        JButton trumpet = new JButton("Trumpet", trumpetPicture);
         trumpet.setBackground(Color.WHITE);
         trumpet.setFont(new Font("Windings 3", Font.PLAIN, 20));
         trumpet.addActionListener(new ActionListener() {
@@ -63,6 +64,7 @@ public class HomeScreen extends JFrame {
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             }
         });
+
         JButton board = new JButton("Sound Board", boardPicture);
         board.setBackground(Color.WHITE);
         board.setFont(new Font("Windings 3", Font.PLAIN, 20));
