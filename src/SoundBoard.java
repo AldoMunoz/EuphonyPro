@@ -3,8 +3,9 @@ import java.awt.*;
 
 public class SoundBoard extends JFrame{
     public SoundBoard(){
-        JPanel Board = new JPanel();
-        setLayout(new GridLayout(10, 10));
+        JPanel p1 = new JPanel(new GridLayout(10, 10));
+        JPanel p2 = new JPanel(new GridLayout(2,1));
+
 
 
     }
