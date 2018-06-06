@@ -2,8 +2,11 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Piano_Screen extends JFrame{
+
+public class Piano_Screen extends JFrame {
     public Piano_Screen() {
         setTitle("Piano Screen!");
 
@@ -40,7 +43,19 @@ public class Piano_Screen extends JFrame{
         c.setBackground(Color.RED);
         c.setFont(new Font("Stencil", Font.BOLD, 30));
         c.setPreferredSize(new Dimension(40, 100));
+        c.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JLabel cLetter = new JLabel("C");
+                p1.add(cLetter);
+            }
+        });
         p2.add(c);
+
+
+
+
+
         JButton d = new JButton("D");
         d.setPreferredSize(new Dimension(40, 60));
         d.setFont(new Font("Stencil", Font.BOLD, 30));
@@ -86,5 +101,7 @@ public class Piano_Screen extends JFrame{
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JOptionPane.showMessageDialog(null,"Welcome to the Piano Screen!\nAt the bottom you'll find your keys, on the " +
+                "left the play and pause button, and your player in the middle.", "Piano Screen!",3);
     }
 }
