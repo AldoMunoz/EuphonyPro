@@ -45,6 +45,11 @@ public class Piano_Screen extends JFrame {
         Image newimg2 = image2.getScaledInstance(90, 90,  java.awt.Image.SCALE_SMOOTH);
         cancelBttn = new ImageIcon(newimg2);
 
+        ImageIcon homeBttn = new ImageIcon("xbutton.png");
+        Image image3 = homeBttn.getImage();
+        Image newimg3 = image3.getScaledInstance(90, 90,  java.awt.Image.SCALE_SMOOTH);
+        homeBttn = new ImageIcon(newimg3);
+
         JButton play = new JButton(playBttn);
         play.setPreferredSize(new Dimension(100, 100));
         play.setBackground(Color.YELLOW);
@@ -64,7 +69,9 @@ public class Piano_Screen extends JFrame {
         stop.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                p1.removeAll();
+                p1.revalidate();
+                p1.repaint();
             }
         });
         p3.add(stop);
@@ -198,6 +205,8 @@ public class Piano_Screen extends JFrame {
         add(p1, BorderLayout.CENTER);
         add(p2, BorderLayout.SOUTH);
         add(p3, BorderLayout.EAST);
+
+
     }
 
     public static void playMusic (String filepath) {
