@@ -10,14 +10,14 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
 import java.util.concurrent.TimeUnit;
 
 
 public class Piano_Screen extends JFrame {
-    public boolean run = false;
+
 
     public Piano_Screen() {
         setTitle("Piano Screen!");
@@ -61,9 +61,10 @@ public class Piano_Screen extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 for(int i = 0; i < pianoNotes.size(); i++) {
-                    PlayMusic.playMusic(pianoNotes.get(i));
-                    }
-        }});
+                    playMusic(pianoNotes.get(i));
+                }
+            }
+        });
         p3.add(play);
 
         JButton stop = new JButton(stopBttn);
@@ -73,9 +74,7 @@ public class Piano_Screen extends JFrame {
         stop.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                run = false;
-                repaint();
-                revalidate();
+
             }
         });
         p3.add(stop);
