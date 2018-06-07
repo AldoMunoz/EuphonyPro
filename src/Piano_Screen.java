@@ -12,20 +12,22 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.concurrent.TimeUnit;
 
 
 public class Piano_Screen extends JFrame {
-    List<String> pianoNotes = new ArrayList<String>();
+
 
     public Piano_Screen() {
         setTitle("Piano Screen!");
+        List<String> pianoNotes = new ArrayList<String>();
+        Border border = new LineBorder(Color.BLACK, 1);
 
         JPanel p1 = new JPanel();
         p1.setLayout(new FlowLayout());
         JPanel p2 = new JPanel(new GridLayout(1,7,10,10));
-        JPanel p3 = new JPanel(new GridLayout(2,1));
-
-        Border border = new LineBorder(Color.BLACK, 1);
+        JPanel p3 = new JPanel(new GridLayout(3,1));
 
         ImageIcon playBttn = new ImageIcon("playbutton.png");
         Image image = playBttn.getImage();
@@ -37,6 +39,11 @@ public class Piano_Screen extends JFrame {
         Image newimg1 = image1.getScaledInstance(90, 90,  java.awt.Image.SCALE_SMOOTH);
         stopBttn = new ImageIcon(newimg1);
 
+        ImageIcon cancelBttn = new ImageIcon("xbutton.png");
+        Image image2 = cancelBttn.getImage();
+        Image newimg2 = image2.getScaledInstance(90, 90,  java.awt.Image.SCALE_SMOOTH);
+        cancelBttn = new ImageIcon(newimg2);
+
         JButton play = new JButton(playBttn);
         play.setPreferredSize(new Dimension(100, 100));
         play.setBackground(Color.YELLOW);
@@ -44,16 +51,7 @@ public class Piano_Screen extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 for(int i = 0; i < pianoNotes.size(); i++) {
-                    InputStream music;
-                    try{
-                        music = new FileInputStream(new File(pianoNotes[i]));
-                        AudioStream audio = new AudioStream(music);
-                        AudioPlayer.player.start(audio);
-                    }
-                    catch (Exception el)
-                    {
-                        JOptionPane.showMessageDialog(null, "Error");
-                    }
+                    playMusic(pianoNotes.get(i));
                 }
             }
         });
@@ -64,9 +62,13 @@ public class Piano_Screen extends JFrame {
         stop.setBackground(Color.YELLOW);
         p3.add(stop);
 
+        JButton cancel = new JButton(cancelBttn);
+        cancel.setPreferredSize(new Dimension(100,100));
+        cancel.setBackground(Color.YELLOW);
+        p3.add(cancel);
+
         p2.setBorder(border);
         p1.setBorder(border);
-
 
         JButton a = new JButton("A");
         a.setPreferredSize(new Dimension(40, 60));
@@ -180,10 +182,24 @@ public class Piano_Screen extends JFrame {
         }
         p2.add(g);
 
-
         add(p1, BorderLayout.CENTER);
         add(p2, BorderLayout.SOUTH);
         add(p3, BorderLayout.EAST);
+    }
+
+    public static void playMusic (String filepath) {
+        InputStream music;
+
+        try{
+            music = new FileInputStream(new File(filepath));
+            AudioStream audio = new AudioStream(music);
+            AudioPlayer.player.start(audio);
+            TimeUnit.MILLISECONDS.sleep(500);
+        }
+        catch (Exception el)
+        {
+            JOptionPane.showMessageDialog(null, "Error");
+        }
     }
 
     public static void main(String[] args) {
@@ -195,7 +211,5 @@ public class Piano_Screen extends JFrame {
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JOptionPane.showMessageDialog(null,"Welcome to the Piano Screen!\nAt the bottom you'll find your keys, on the " +
-                "left the play and pause button, and your player in the middle.", "Piano Screen!",3);
     }
 }
