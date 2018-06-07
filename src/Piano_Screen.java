@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 
 
 public class Piano_Screen extends JFrame {
-    public boolean run = false;
+
 
     public Piano_Screen() {
         setTitle("Piano Screen!");
@@ -56,16 +56,11 @@ public class Piano_Screen extends JFrame {
         play.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                run = true;
-                if(run){
                 for(int i = 0; i < pianoNotes.size(); i++) {
-                    PlayMusic.playMusic(pianoNotes.get(i));
-                    if(run==false){
-                        System.exit(0);
-                    }
+                    playMusic(pianoNotes.get(i));
                 }
             }
-        }});
+        });
         p3.add(play);
 
         JButton stop = new JButton(stopBttn);
@@ -74,9 +69,7 @@ public class Piano_Screen extends JFrame {
         stop.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                run = false;
-                repaint();
-                revalidate();
+
             }
         });
         p3.add(stop);
