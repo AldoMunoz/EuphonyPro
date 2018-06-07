@@ -1,39 +1,53 @@
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 //ppop
 public class HomeScreen extends JFrame {
+    Color orangeRed = new Color(255,69,0);
+
     public HomeScreen(){
+        int w = getWidth();
+        Border padding = BorderFactory.createEmptyBorder(40, 10, 10, 10);
+        Border border = new LineBorder(Color.WHITE,1);
+
         JPanel homeScreen = new JPanel();
-        homeScreen.setBackground(Color.RED);
+        homeScreen.setBackground(Color.WHITE);
+        homeScreen.setPreferredSize(new Dimension(w,200));
+        homeScreen.setBorder(padding);
         JPanel greetingLabel = new JPanel();
-        greetingLabel.setBackground(Color.WHITE);
+        greetingLabel.setBackground(orangeRed);
         JPanel buttons = new JPanel();
         buttons.setBackground(Color.WHITE);
-
+        buttons.setPreferredSize(new Dimension(w, 675));
         ImageIcon trumpetPicture = new ImageIcon("CompSciTrumpet.jpg");
         Image image = trumpetPicture.getImage();
-        Image newimg = image.getScaledInstance(500, 500,  java.awt.Image.SCALE_SMOOTH);
+        Image newimg = image.getScaledInstance(550, 550,  java.awt.Image.SCALE_SMOOTH);
         trumpetPicture = new ImageIcon(newimg);
         ImageIcon pianoPicture = new ImageIcon("CompSciPiano.jpg");
         Image image1 = pianoPicture.getImage();
-        Image newimg1 = image1.getScaledInstance(500, 500,  java.awt.Image.SCALE_SMOOTH);
+        Image newimg1 = image1.getScaledInstance(550, 550,  java.awt.Image.SCALE_SMOOTH);
         pianoPicture = new ImageIcon(newimg1);
         ImageIcon boardPicture = new ImageIcon("CompSciSoundboard.jpg");
         Image image2 = boardPicture.getImage();
-        Image newimg2 = image2.getScaledInstance(500, 500,  java.awt.Image.SCALE_SMOOTH);
+        Image newimg2 = image2.getScaledInstance(550, 550,  java.awt.Image.SCALE_SMOOTH);
         boardPicture = new ImageIcon(newimg2);
 
-        JLabel welcomeBanner = new JLabel("Welcome to Euphony");
-        welcomeBanner.setFont(new Font("Windings 3", Font.BOLD, 100));
-        JLabel chooseInstrument = new JLabel("Pick Your Instrument");
-        chooseInstrument.setFont(new Font("Windings 3", Font.BOLD, 60));
+        JLabel welcomeBanner = new JLabel("Welcome to Euphony", JLabel.CENTER);
+        welcomeBanner.setFont(new Font("Impact", Font.BOLD, 85));
+        JLabel chooseInstrument = new JLabel("Pick Your Instrument", JLabel.CENTER);
+        chooseInstrument.setFont(new Font("Impact", Font.BOLD, 100));
+        chooseInstrument.setForeground(Color.WHITE);
 
         JButton piano = new JButton("Piano", pianoPicture);
+        piano.setBorder(border);
+        piano.setVerticalTextPosition(SwingConstants.TOP);
+        piano.setHorizontalTextPosition(SwingConstants.CENTER);
         piano.setBackground(Color.WHITE);
-        piano.setFont(new Font("Windings 3", Font.PLAIN, 20));
+        piano.setFont(new Font("Impact", Font.PLAIN, 50));
         piano.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -53,7 +67,10 @@ public class HomeScreen extends JFrame {
 
         JButton trumpet = new JButton("Trumpet", trumpetPicture);
         trumpet.setBackground(Color.WHITE);
-        trumpet.setFont(new Font("Windings 3", Font.PLAIN, 20));
+        trumpet.setBorder(border);
+        trumpet.setVerticalTextPosition(SwingConstants.TOP);
+        trumpet.setHorizontalTextPosition(SwingConstants.CENTER);
+        trumpet.setFont(new Font("Impact", Font.PLAIN, 50));
         trumpet.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -73,7 +90,10 @@ public class HomeScreen extends JFrame {
 
         JButton board = new JButton("Sound Board", boardPicture);
         board.setBackground(Color.WHITE);
-        board.setFont(new Font("Windings 3", Font.PLAIN, 20));
+        board.setVerticalTextPosition(SwingConstants.TOP);
+        board.setHorizontalTextPosition(SwingConstants.CENTER);
+        board.setBorder(border);
+        board.setFont(new Font("Impact", Font.PLAIN, 50));
         board.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

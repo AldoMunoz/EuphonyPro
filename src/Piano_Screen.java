@@ -1,6 +1,5 @@
 import sun.audio.AudioPlayer;
 import sun.audio.AudioStream;
-
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -15,21 +14,23 @@ import java.util.List;
 import java.util.Timer;
 import java.util.concurrent.TimeUnit;
 
-
 public class Piano_Screen extends JFrame {
-
+    Color Snow2 = new Color(255,250,250);
+    Border border = new LineBorder(Color.BLACK, 1);
+    Border newBorder = new LineBorder(Color.WHITE, 1);
+    Border wBorder = new LineBorder(Color.WHITE, 3);
 
     public Piano_Screen() {
         setTitle("Piano Screen!");
         List<String> pianoNotes = new ArrayList<String>();
-        Border border = new LineBorder(Color.BLACK, 1);
-        Border newBorder = new LineBorder(Color.WHITE, 1);
 
         JPanel p1 = new JPanel();
-        p1.setLayout(new FlowLayout());
         JPanel p2 = new JPanel(new GridLayout(1,7,10,10));
         JPanel p3 = new JPanel(new GridLayout(4,1));
-        p2.setBackground(Color.BLACK);
+        p2.setBackground(Color.WHITE);
+        p1.setBackground(Color.WHITE);
+        p1.setLayout(new FlowLayout());
+        p1.setBackground(Snow2);
 
         //BUTTONS ON THE SIDE//
 
@@ -123,8 +124,10 @@ public class Piano_Screen extends JFrame {
 
         JButton a = new JButton("A");
         a.setPreferredSize(new Dimension(40, 60));
-        a.setFont(new Font("Impact", Font.BOLD, 30));
-        a.setBackground(Color.WHITE);
+        a.setFont(new Font("Impact", Font.BOLD, 50));
+        a.setForeground(Color.WHITE);
+        a.setBackground(Color.BLACK);
+        a.setBorder(wBorder);
         a.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -139,8 +142,10 @@ public class Piano_Screen extends JFrame {
         p2.add(a);
         JButton b = new JButton("B");
         b.setPreferredSize(new Dimension(40, 60));
-        b.setFont(new Font("Impact", Font.BOLD, 30));
-        b.setBackground(Color.WHITE);
+        b.setFont(new Font("Impact", Font.BOLD, 50));
+        b.setForeground(Color.WHITE);
+        b.setBackground(Color.BLACK);
+        b.setBorder(wBorder);
         b.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -154,8 +159,10 @@ public class Piano_Screen extends JFrame {
         }
         p2.add(b);
         JButton c = new JButton("C");
-        c.setBackground(Color.WHITE);
-        c.setFont(new Font("Impact", Font.BOLD, 30));
+        c.setForeground(Color.WHITE);
+        c.setBackground(Color.BLACK);
+        c.setBorder(wBorder);
+        c.setFont(new Font("Impact", Font.BOLD, 50));
         c.setPreferredSize(new Dimension(40, 100));
         c.addActionListener(new ActionListener() {
             @Override
@@ -170,8 +177,10 @@ public class Piano_Screen extends JFrame {
         p2.add(c);
         JButton d = new JButton("D");
         d.setPreferredSize(new Dimension(40, 60));
-        d.setFont(new Font("Impact", Font.BOLD, 30));
-        d.setBackground(Color.WHITE);
+        d.setFont(new Font("Impact", Font.BOLD, 50));
+        d.setForeground(Color.WHITE);
+        d.setBackground(Color.BLACK);
+        d.setBorder(wBorder);
         d.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -186,8 +195,10 @@ public class Piano_Screen extends JFrame {
         p2.add(d);
         JButton e = new JButton("E");
         e.setPreferredSize(new Dimension(40, 60));
-        e.setFont(new Font("Impact", Font.BOLD, 30));
-        e.setBackground(Color.WHITE);
+        e.setFont(new Font("Impact", Font.BOLD, 50));
+        e.setForeground(Color.WHITE);
+        e.setBackground(Color.BLACK);
+        e.setBorder(wBorder);
         e.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -202,8 +213,10 @@ public class Piano_Screen extends JFrame {
         p2.add(e);
         JButton f = new JButton("F");
         f.setPreferredSize(new Dimension(40, 60));
-        f.setFont(new Font("Impact", Font.BOLD, 30));
-        f.setBackground(Color.WHITE);
+        f.setFont(new Font("Impact", Font.BOLD, 50));
+        f.setForeground(Color.WHITE);
+        f.setBackground(Color.BLACK);
+        f.setBorder(wBorder);
         f.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -218,8 +231,10 @@ public class Piano_Screen extends JFrame {
         p2.add(f);
         JButton g = new JButton("G");
         g.setPreferredSize(new Dimension(40, 60));
-        g.setFont(new Font("Impact", Font.BOLD, 30));
-        g.setBackground(Color.WHITE);
+        g.setFont(new Font("Impact", Font.BOLD, 50));
+        g.setForeground(Color.WHITE);
+        g.setBackground(Color.BLACK);
+        g.setBorder(wBorder);
         g.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
