@@ -10,9 +10,9 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
 import java.util.concurrent.TimeUnit;
 
 
@@ -60,15 +60,9 @@ public class Piano_Screen extends JFrame {
         play.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                run = true;
-                if(run){
                 for(int i = 0; i < pianoNotes.size(); i++) {
                     PlayMusic.playMusic(pianoNotes.get(i));
-                    if(run==false){
-                        System.exit(0);
                     }
-                }
-            }
         }});
         p3.add(play);
 
