@@ -37,6 +37,7 @@ public class HomeScreen extends JFrame {
         piano.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                dispose();
                 Piano_Screen frame = new Piano_Screen();
                 Toolkit tk = Toolkit.getDefaultToolkit();
                 int xSize = ((int) tk.getScreenSize().getWidth());
@@ -56,6 +57,7 @@ public class HomeScreen extends JFrame {
         trumpet.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                dispose();
                 Trumpet_Screen frame = new Trumpet_Screen();
                 Toolkit tk = Toolkit.getDefaultToolkit();
                 int xSize = ((int) tk.getScreenSize().getWidth());
@@ -72,6 +74,20 @@ public class HomeScreen extends JFrame {
         JButton board = new JButton("Sound Board", boardPicture);
         board.setBackground(Color.WHITE);
         board.setFont(new Font("Windings 3", Font.PLAIN, 20));
+        board.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                SoundBoard frame = new SoundBoard();
+                Toolkit tk = Toolkit.getDefaultToolkit();
+                int xSize = ((int) tk.getScreenSize().getWidth());
+                int ySize = ((int) tk.getScreenSize().getHeight());
+                frame.setSize(xSize,ySize);
+                frame.setVisible(true);
+                frame.setLocationRelativeTo(null);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            }
+        });
         buttons.add(piano);
         buttons.add(trumpet);
         buttons.add(board);
