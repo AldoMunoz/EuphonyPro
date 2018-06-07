@@ -60,11 +60,23 @@ public class Piano_Screen extends JFrame {
         JButton stop = new JButton(stopBttn);
         stop.setPreferredSize(new Dimension(100,100));
         stop.setBackground(Color.YELLOW);
+        stop.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
         p3.add(stop);
 
         JButton cancel = new JButton(cancelBttn);
         cancel.setPreferredSize(new Dimension(100,100));
         cancel.setBackground(Color.YELLOW);
+        cancel.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
         p3.add(cancel);
 
         p2.setBorder(border);
