@@ -27,7 +27,7 @@ public class Piano_Screen extends JFrame {
         JPanel p1 = new JPanel();
         p1.setLayout(new FlowLayout());
         JPanel p2 = new JPanel(new GridLayout(1,7,10,10));
-        JPanel p3 = new JPanel(new GridLayout(3,1));
+        JPanel p3 = new JPanel(new GridLayout(4,1));
         p2.setBackground(Color.BLACK);
 
         ImageIcon playBttn = new ImageIcon("playbutton.png");
@@ -45,7 +45,7 @@ public class Piano_Screen extends JFrame {
         Image newimg2 = image2.getScaledInstance(90, 90,  java.awt.Image.SCALE_SMOOTH);
         cancelBttn = new ImageIcon(newimg2);
 
-        ImageIcon homeBttn = new ImageIcon("xbutton.png");
+        ImageIcon homeBttn = new ImageIcon("homebutton.png");
         Image image3 = homeBttn.getImage();
         Image newimg3 = image3.getScaledInstance(90, 90,  java.awt.Image.SCALE_SMOOTH);
         homeBttn = new ImageIcon(newimg3);
@@ -69,9 +69,7 @@ public class Piano_Screen extends JFrame {
         stop.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                p1.removeAll();
-                p1.revalidate();
-                p1.repaint();
+
             }
         });
         p3.add(stop);
@@ -82,10 +80,23 @@ public class Piano_Screen extends JFrame {
         cancel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                p1.removeAll();
+                p1.revalidate();
+                p1.repaint();
             }
         });
         p3.add(cancel);
+
+        JButton home = new JButton(homeBttn);
+        home.setPreferredSize(new Dimension(100,100));
+        home.setBackground(Color.YELLOW);
+        home.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        p3.add(home);
 
         p2.setBorder(border);
         p1.setBorder(border);
