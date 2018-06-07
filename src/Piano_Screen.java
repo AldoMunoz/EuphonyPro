@@ -28,6 +28,7 @@ public class Piano_Screen extends JFrame {
         p1.setLayout(new FlowLayout());
         JPanel p2 = new JPanel(new GridLayout(1,7,10,10));
         JPanel p3 = new JPanel(new GridLayout(3,1));
+        p2.setBackground(Color.BLACK);
 
         ImageIcon playBttn = new ImageIcon("playbutton.png");
         Image image = playBttn.getImage();
@@ -85,7 +86,7 @@ public class Piano_Screen extends JFrame {
         JButton a = new JButton("A");
         a.setPreferredSize(new Dimension(40, 60));
         a.setFont(new Font("Stencil", Font.BOLD, 30));
-        a.setBackground(Color.RED);
+        a.setBackground(Color.WHITE);
         a.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -101,7 +102,7 @@ public class Piano_Screen extends JFrame {
         JButton b = new JButton("B");
         b.setPreferredSize(new Dimension(40, 60));
         b.setFont(new Font("Stencil", Font.BOLD, 30));
-        b.setBackground(Color.RED);
+        b.setBackground(Color.WHITE);
         b.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -115,7 +116,7 @@ public class Piano_Screen extends JFrame {
         }
         p2.add(b);
         JButton c = new JButton("C");
-        c.setBackground(Color.RED);
+        c.setBackground(Color.WHITE);
         c.setFont(new Font("Stencil", Font.BOLD, 30));
         c.setPreferredSize(new Dimension(40, 100));
         c.addActionListener(new ActionListener() {
@@ -132,7 +133,7 @@ public class Piano_Screen extends JFrame {
         JButton d = new JButton("D");
         d.setPreferredSize(new Dimension(40, 60));
         d.setFont(new Font("Stencil", Font.BOLD, 30));
-        d.setBackground(Color.RED);
+        d.setBackground(Color.WHITE);
         d.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -148,7 +149,7 @@ public class Piano_Screen extends JFrame {
         JButton e = new JButton("E");
         e.setPreferredSize(new Dimension(40, 60));
         e.setFont(new Font("Stencil", Font.BOLD, 30));
-        e.setBackground(Color.RED);
+        e.setBackground(Color.WHITE);
         e.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -164,7 +165,7 @@ public class Piano_Screen extends JFrame {
         JButton f = new JButton("F");
         f.setPreferredSize(new Dimension(40, 60));
         f.setFont(new Font("Stencil", Font.BOLD, 30));
-        f.setBackground(Color.RED);
+        f.setBackground(Color.WHITE);
         f.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -180,7 +181,7 @@ public class Piano_Screen extends JFrame {
         JButton g = new JButton("G");
         g.setPreferredSize(new Dimension(40, 60));
         g.setFont(new Font("Stencil", Font.BOLD, 30));
-        g.setBackground(Color.RED);
+        g.setBackground(Color.WHITE);
         g.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
