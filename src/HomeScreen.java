@@ -12,6 +12,7 @@ public class HomeScreen extends JFrame {
     public HomeScreen(){
         int w = getWidth();
         Border padding = BorderFactory.createEmptyBorder(40, 10, 10, 10);
+        Border padding2 = BorderFactory.createEmptyBorder(8, 10, 10, 10);
         Border border = new LineBorder(Color.WHITE,1);
 
         JPanel homeScreen = new JPanel();
@@ -20,6 +21,7 @@ public class HomeScreen extends JFrame {
         homeScreen.setBorder(padding);
         JPanel greetingLabel = new JPanel();
         greetingLabel.setBackground(orangeRed);
+        greetingLabel.setBorder(padding2);
         JPanel buttons = new JPanel();
         buttons.setBackground(Color.WHITE);
         buttons.setPreferredSize(new Dimension(w, 675));
@@ -38,7 +40,7 @@ public class HomeScreen extends JFrame {
 
         JLabel welcomeBanner = new JLabel("Welcome to Euphony", JLabel.CENTER);
         welcomeBanner.setFont(new Font("Impact", Font.BOLD, 85));
-        JLabel chooseInstrument = new JLabel("Pick Your Instrument", JLabel.CENTER);
+        JLabel chooseInstrument = new JLabel("Click On An Instrument", JLabel.CENTER);
         chooseInstrument.setFont(new Font("Impact", Font.BOLD, 100));
         chooseInstrument.setForeground(Color.WHITE);
 

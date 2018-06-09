@@ -14,6 +14,8 @@ import java.util.List;
 import java.util.Timer;
 import java.util.concurrent.TimeUnit;
 
+//Set Speed Button = next order of operations!!!
+
 public class Piano_Screen extends JFrame {
     Color Snow2 = new Color(255,250,250);
     Border border = new LineBorder(Color.BLACK, 1);
