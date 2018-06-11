@@ -248,7 +248,28 @@ public class Piano_Screen extends JFrame {
             }
         }); {
         }
-        p2.add(g);
+
+        p2.add(f);
+        JButton rest = new JButton("Rest");
+        rest.setPreferredSize(new Dimension(40, 60));
+        rest.setFont(new Font("Impact", Font.BOLD, 50));
+        rest.setForeground(Color.WHITE);
+        rest.setBackground(Color.BLACK);
+        rest.setBorder(wBorder);
+        rest.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JLabel restLestter = new JLabel("Rest");
+                restLestter.setFont(new Font("Impact", Font.BOLD, 60));
+                pianoNotes.add("rest.mp3");
+                p1.add(restLestter);
+                p1.revalidate();
+            }
+        }); {
+        }
+        p2.add(rest);
+
+
 
         //PIANO KEYS//
 

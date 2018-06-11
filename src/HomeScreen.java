@@ -62,8 +62,8 @@ public class HomeScreen extends JFrame {
                 frame.setVisible(true);
                 frame.setLocationRelativeTo(null);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                JOptionPane.showMessageDialog(null,"Welcome to the Piano Screen!\nAt the bottom you'll find your keys, on the " +
-                        "left the play and pause button, and your player in the middle.", "Piano Screen!",3);
+                JOptionPane.showMessageDialog(null,"Welcome to the Instument Screen!\nAt the bottom you'll find your keys, on the " +
+                        "left the play and pause button, and your player in the middle.", "Instrument Screen!",3);
             }
         });
 
