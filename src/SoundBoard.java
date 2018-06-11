@@ -4,10 +4,7 @@ import java.awt.*;
 public class SoundBoard extends JFrame{
     public SoundBoard(){
         JPanel p1 = new JPanel(new GridLayout(10, 10));
-        JPanel p2 = new JPanel(new GridLayout(2,1));
-
-
-
+        JButton b1 = new JButton("")
     }
     public static void main(String[] args) {
         SoundBoard frame = new SoundBoard();
