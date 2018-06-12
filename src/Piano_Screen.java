@@ -249,7 +249,7 @@ public class Piano_Screen extends JFrame {
         }); {
         }
 
-        p2.add(f);
+        p2.add(g);
         JButton rest = new JButton("Rest");
         rest.setPreferredSize(new Dimension(40, 60));
         rest.setFont(new Font("Impact", Font.BOLD, 50));

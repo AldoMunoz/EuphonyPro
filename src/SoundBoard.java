@@ -41,6 +41,33 @@ public class SoundBoard extends JFrame{
         });
         p1.add(b3);
 
+        JButton b4 = new JButton("High Hats 2 w/ Beep 2");
+        b4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playMusic("hihatswbeep2.wav");
+            }
+        });
+        p1.add(b4);
+
+        JButton b5 = new JButton("Beat 1");
+        b5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playMusic("beat1.wav");
+            }
+        });
+        p1.add(b5);
+
+        JButton b6 = new JButton("High Hats w/ Beep 3");
+        b6.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playMusic("hihatswbeep3.wav");
+            }
+        });
+        p1.add(b6);
+
         add(p1);
     }
     public static void main(String[] args) {
