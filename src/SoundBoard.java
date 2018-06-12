@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class SoundBoard extends JFrame{
     public SoundBoard(){
         JPanel p1 = new JPanel(new GridLayout(10, 10));
+
         JButton b1 = new JButton("High Hats 1");
         b1.addActionListener(new ActionListener() {
             @Override
@@ -21,6 +22,24 @@ public class SoundBoard extends JFrame{
             }
         });
         p1.add(b1);
+
+        JButton b2 = new JButton("High Hats 2");
+        b2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playMusic("hihats2.wav");
+            }
+        });
+        p1.add(b2);
+
+        JButton b3 = new JButton("High Hats 2 w/ Beep");
+        b3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playMusic("hihatswbeep.wav");
+            }
+        });
+        p1.add(b3);
 
         add(p1);
     }
