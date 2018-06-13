@@ -12,7 +12,8 @@ import java.util.concurrent.TimeUnit;
 
 public class SoundBoard extends JFrame{
     public SoundBoard(){
-        JPanel p1 = new JPanel(new GridLayout(10, 10));
+        JPanel p1 = new JPanel(new GridLayout(8, 8));
+        JPanel p2 = new JPanel(new GridLayout(2,1));
 
         JButton b1 = new JButton("High Hats 1");
         b1.addActionListener(new ActionListener() {
@@ -176,7 +177,8 @@ public class SoundBoard extends JFrame{
         p1.add(b20);
 
 
-        add(p1);
+        add(p1, BorderLayout.CENTER);
+        add(p2, BorderLayout.EAST);
     }
     public static void main(String[] args) {
         SoundBoard frame = new SoundBoard();
