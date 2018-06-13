@@ -94,6 +94,87 @@ public class SoundBoard extends JFrame{
             }
         });
         p1.add(b10);
+        JButton b11 = new JButton("Chill Drums");
+        b11.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playMusic("chilldrums.aif");
+            }
+        });
+        p1.add(b11);
+        JButton b12 = new JButton("Happy Drum Beat");
+        b12.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playMusic("happydrumbeat.wav");
+            }
+        });
+        p1.add(b12);
+        JButton b13 = new JButton("Hip Hop Drums");
+        b13.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playMusic("hiphopdrums.wav");
+            }
+        });
+        p1.add(b13);
+        JButton b14 = new JButton("Kicking Drum Beat");
+        b14.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playMusic("kickingdrumbeat.aif");
+            }
+        });
+        p1.add(b14);
+        JButton b15 = new JButton("Lo-fi Drums");
+        b15.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playMusic("lofidrums.wav");
+            }
+        });
+        p1.add(b15);
+        JButton b16 = new JButton("Lush Drums");
+        b16.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playMusic("lushdrums.aif");
+            }
+        });
+        p1.add(b16);
+        JButton b17 = new JButton("Slow Funk Drums");
+        b17.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playMusic("slowfunkdrums.aif");
+            }
+        });
+        p1.add(b17);
+        JButton b18 = new JButton("Swinger Drums");
+        b18.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playMusic("swingerdrums.aif");
+            }
+        });
+        p1.add(b18);
+        JButton b19 = new JButton("Vinyl Drums");
+        b19.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playMusic("vinyldrums.aif");
+            }
+        });
+        p1.add(b19);
+        JButton b20 = new JButton("Wobba-Wobba Drums");
+        b20.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playMusic("wobbawobbabeat.wav");
+            }
+        });
+        p1.add(b20);
+
 
         add(p1);
     }
