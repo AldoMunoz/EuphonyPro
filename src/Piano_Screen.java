@@ -133,7 +133,7 @@ public class Piano_Screen extends JFrame {
         a.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JLabel aLetter = new JLabel("A");
+                JLabel aLetter = new JLabel(" A ");
                 aLetter.setFont(new Font("Impact", Font.BOLD, 60));
                 pianoNotes.add("a.wav");
                 p1.add(aLetter);
@@ -151,7 +151,7 @@ public class Piano_Screen extends JFrame {
         b.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JLabel bLetter = new JLabel("B");
+                JLabel bLetter = new JLabel(" B ");
                 bLetter.setFont(new Font("Impact", Font.BOLD, 60));
                 pianoNotes.add("b.wav");
                 p1.add(bLetter);
@@ -169,7 +169,7 @@ public class Piano_Screen extends JFrame {
         c.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JLabel cLetter = new JLabel("C");
+                JLabel cLetter = new JLabel(" C ");
                 cLetter.setFont(new Font("Impact", Font.BOLD, 60));
                 pianoNotes.add("c.wav");
                 p1.add(cLetter);
@@ -186,7 +186,7 @@ public class Piano_Screen extends JFrame {
         d.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JLabel dLetter = new JLabel("D");
+                JLabel dLetter = new JLabel(" D ");
                 dLetter.setFont(new Font("Impact", Font.BOLD, 60));
                 pianoNotes.add("d.wav");
                 p1.add(dLetter);
@@ -204,7 +204,7 @@ public class Piano_Screen extends JFrame {
         e.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JLabel eLetter = new JLabel("E");
+                JLabel eLetter = new JLabel(" E ");
                 eLetter.setFont(new Font("Impact", Font.BOLD, 60));
                 pianoNotes.add("e.wav");
                 p1.add(eLetter);
@@ -222,7 +222,7 @@ public class Piano_Screen extends JFrame {
         f.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JLabel fLetter = new JLabel("F");
+                JLabel fLetter = new JLabel(" F ");
                 fLetter.setFont(new Font("Impact", Font.BOLD, 60));
                 pianoNotes.add("f.wav");
                 p1.add(fLetter);
@@ -240,7 +240,7 @@ public class Piano_Screen extends JFrame {
         g.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JLabel gLetter = new JLabel("G");
+                JLabel gLetter = new JLabel(" G ");
                 gLetter.setFont(new Font("Impact", Font.BOLD, 60));
                 pianoNotes.add("g.wav");
                 p1.add(gLetter);
@@ -259,9 +259,9 @@ public class Piano_Screen extends JFrame {
         rest.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JLabel restLestter = new JLabel("Rest");
+                JLabel restLestter = new JLabel(" (R) ");
                 restLestter.setFont(new Font("Impact", Font.BOLD, 60));
-                pianoNotes.add("rest.mp3");
+                pianoNotes.add("Silent.wav");
                 p1.add(restLestter);
                 p1.revalidate();
             }

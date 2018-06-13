@@ -22,7 +22,6 @@ public class SoundBoard extends JFrame{
             }
         });
         p1.add(b1);
-
         JButton b2 = new JButton("High Hats 2");
         b2.addActionListener(new ActionListener() {
             @Override
@@ -31,7 +30,6 @@ public class SoundBoard extends JFrame{
             }
         });
         p1.add(b2);
-
         JButton b3 = new JButton("High Hats 2 w/ Beep");
         b3.addActionListener(new ActionListener() {
             @Override
@@ -40,7 +38,6 @@ public class SoundBoard extends JFrame{
             }
         });
         p1.add(b3);
-
         JButton b4 = new JButton("High Hats 2 w/ Beep 2");
         b4.addActionListener(new ActionListener() {
             @Override
@@ -49,7 +46,6 @@ public class SoundBoard extends JFrame{
             }
         });
         p1.add(b4);
-
         JButton b5 = new JButton("Beat 1");
         b5.addActionListener(new ActionListener() {
             @Override
@@ -58,15 +54,46 @@ public class SoundBoard extends JFrame{
             }
         });
         p1.add(b5);
-
         JButton b6 = new JButton("High Hats w/ Beep 3");
         b6.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                playMusic("hihatswbeep3.wav");
+                playMusic("hihatswbeat3.wav");
             }
         });
         p1.add(b6);
+        JButton b7 = new JButton("Beat 2");
+        b7.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playMusic("beat2.wav");
+            }
+        });
+        p1.add(b7);
+        JButton b8 = new JButton("Nano Loop");
+        b8.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playMusic("nanoloop.wav");
+            }
+        });
+        p1.add(b8);
+        JButton b9 = new JButton("Hat 1");
+        b9.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playMusic("hat1.aif");
+            }
+        });
+        p1.add(b9);
+        JButton b10 = new JButton("Hat 2");
+        b10.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playMusic("hat2.aif");
+            }
+        });
+        p1.add(b10);
 
         add(p1);
     }

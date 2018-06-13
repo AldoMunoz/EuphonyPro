@@ -62,7 +62,10 @@ public class Trumpet_Screen extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 for(int i = 0; i < pianoNotes.size(); i++) {
-                    playMusic(pianoNotes.get(i));
+                    if (pianoNotes.get(i) == "Silent.wav"){
+                        playRest(pianoNotes.get(i));
+                    }
+                    else playMusic(pianoNotes.get(i));
                 }
             }
         });
@@ -131,9 +134,9 @@ public class Trumpet_Screen extends JFrame {
         a.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JLabel aLetter = new JLabel("A");
+                JLabel aLetter = new JLabel(" A ");
                 aLetter.setFont(new Font("Impact", Font.BOLD, 60));
-                pianoNotes.add("a.wav");
+                pianoNotes.add("trumpA.wav");
                 p1.add(aLetter);
                 p1.revalidate();
             }
@@ -149,9 +152,9 @@ public class Trumpet_Screen extends JFrame {
         b.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JLabel bLetter = new JLabel("B");
+                JLabel bLetter = new JLabel(" B ");
                 bLetter.setFont(new Font("Impact", Font.BOLD, 60));
-                pianoNotes.add("b.wav");
+                pianoNotes.add("trumpB.wav");
                 p1.add(bLetter);
                 p1.revalidate();
             }
@@ -167,9 +170,9 @@ public class Trumpet_Screen extends JFrame {
         c.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JLabel cLetter = new JLabel("C");
+                JLabel cLetter = new JLabel(" C ");
                 cLetter.setFont(new Font("Impact", Font.BOLD, 60));
-                pianoNotes.add("c.wav");
+                pianoNotes.add("trumpC.wav");
                 p1.add(cLetter);
                 p1.revalidate();
             }
@@ -184,9 +187,9 @@ public class Trumpet_Screen extends JFrame {
         d.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JLabel dLetter = new JLabel("D");
+                JLabel dLetter = new JLabel(" D ");
                 dLetter.setFont(new Font("Impact", Font.BOLD, 60));
-                pianoNotes.add("d.wav");
+                pianoNotes.add("trumpD.wav");
                 p1.add(dLetter);
                 p1.revalidate();
             }
@@ -202,9 +205,9 @@ public class Trumpet_Screen extends JFrame {
         e.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JLabel eLetter = new JLabel("E");
+                JLabel eLetter = new JLabel(" E ");
                 eLetter.setFont(new Font("Impact", Font.BOLD, 60));
-                pianoNotes.add("e.wav");
+                pianoNotes.add("trumpE.wav");
                 p1.add(eLetter);
                 p1.revalidate();
             }
@@ -220,9 +223,9 @@ public class Trumpet_Screen extends JFrame {
         f.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JLabel fLetter = new JLabel("F");
+                JLabel fLetter = new JLabel(" F ");
                 fLetter.setFont(new Font("Impact", Font.BOLD, 60));
-                pianoNotes.add("f.wav");
+                pianoNotes.add("trumpF.wav");
                 p1.add(fLetter);
                 p1.revalidate();
             }
@@ -238,15 +241,34 @@ public class Trumpet_Screen extends JFrame {
         g.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JLabel gLetter = new JLabel("G");
+                JLabel gLetter = new JLabel(" G ");
                 gLetter.setFont(new Font("Impact", Font.BOLD, 60));
-                pianoNotes.add("g.wav");
+                pianoNotes.add("trumpG.wav");
                 p1.add(gLetter);
                 p1.revalidate();
             }
         }); {
         }
         p2.add(g);
+
+        JButton rest = new JButton("Rest");
+        rest.setPreferredSize(new Dimension(40, 60));
+        rest.setFont(new Font("Impact", Font.BOLD, 50));
+        rest.setForeground(Color.WHITE);
+        rest.setBackground(Color.BLACK);
+        rest.setBorder(wBorder);
+        rest.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JLabel restLestter = new JLabel(" (R) ");
+                restLestter.setFont(new Font("Impact", Font.BOLD, 60));
+                pianoNotes.add("Silent.wav");
+                p1.add(restLestter);
+                p1.revalidate();
+            }
+        }); {
+        }
+        p2.add(rest);
 
         //PIANO KEYS//
 
@@ -264,7 +286,22 @@ public class Trumpet_Screen extends JFrame {
             music = new FileInputStream(new File(filepath));
             AudioStream audio = new AudioStream(music);
             AudioPlayer.player.start(audio);
-            TimeUnit.MILLISECONDS.sleep(500);
+            TimeUnit.MILLISECONDS.sleep(1200);
+        }
+        catch (Exception el)
+        {
+            JOptionPane.showMessageDialog(null, "Error");
+        }
+    }
+
+    public static void playRest(String filepath) {
+        InputStream music;
+
+        try{
+            music = new FileInputStream(new File(filepath));
+            AudioStream audio = new AudioStream(music);
+            AudioPlayer.player.start(audio);
+            TimeUnit.MILLISECONDS.sleep(600);
         }
         catch (Exception el)
         {
