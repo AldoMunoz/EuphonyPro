@@ -63,7 +63,7 @@ public class HomeScreen extends JFrame {
                 frame.setLocationRelativeTo(null);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 JOptionPane.showMessageDialog(null,"Welcome to the Piano Screen!\nAt the bottom you'll find your keys, on the " +
-                        "left the play, pause, cancel, and home button, and your player in the middle.", "Piano Screen!",3);
+                        "left the play, cancel, and home button, and your player in the middle.", "Piano Screen!",3);
             }
         });
 
@@ -86,7 +86,7 @@ public class HomeScreen extends JFrame {
                 frame.setLocationRelativeTo(null);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 JOptionPane.showMessageDialog(null,"Welcome to the Trumpet Screen!\nAt the bottom you'll find your keys, on the " +
-                        "left the play, pause, cancel, and home button, and your player in the middle.", "Trumpet Screen!",3);
+                        "left the play cancel, and home button, and your player in the middle.", "Trumpet Screen!",3);
             }
         });
 
