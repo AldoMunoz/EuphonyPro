@@ -51,6 +51,11 @@ public class Piano_Screen extends JFrame {
         Image newimg3 = image3.getScaledInstance(90, 90,  java.awt.Image.SCALE_SMOOTH);
         homeBttn = new ImageIcon(newimg3);
 
+        ImageIcon restBttn = new ImageIcon("rest2.png");
+        Image image4 = restBttn.getImage();
+        Image newimg4 = image4.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
+        restBttn = new ImageIcon(newimg4);
+
         JButton play = new JButton(playBttn);
         play.setPreferredSize(new Dimension(125, 100));
         play.setBackground(Color.WHITE);
@@ -233,7 +238,7 @@ public class Piano_Screen extends JFrame {
         }
 
         p2.add(g);
-        JButton rest = new JButton("Rest");
+        JButton rest = new JButton(restBttn);
         rest.setPreferredSize(new Dimension(40, 60));
         rest.setFont(new Font("Impact", Font.BOLD, 50));
         rest.setForeground(Color.WHITE);
